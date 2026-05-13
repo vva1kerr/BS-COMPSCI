@@ -1,0 +1,96 @@
+# process management
+ps aux        # Full process list
+top           # Live view of processes
+htop          # (Better, but may need install: sudo apt install htop)
+
+# manage processes
+kill <PID>                 # Kill a process by ID
+killall <process_name>     # Kill by name
+nice -n 10 <command>       # Start a process with a nice (priority) value
+renice -n 5 -p <PID>       # Change priority of an existing process
+
+# memory management
+free -h              # Memory usage in human-readable format
+vmstat               # Virtual memory statistics
+top or htop          # Also shows memory per process
+
+# view swap usage
+swapon --show        # Active swap areas
+
+# view mounted file systems
+df -h                # Disk space usage by file system
+mount                # All mounted file systems
+lsblk                # Block devices and mount points
+
+# create/delete files and directories
+touch file.txt                 # Create a file
+mkdir new_folder               # Create a directory
+rm file.txt                    # Delete file
+rm -r directory_name/          # Delete directory and contents
+
+# manage file permissions
+chmod 755 file.sh              # Set permissions
+chown user:group file.txt      # Change file ownership
+
+# view partitions and storeage devices
+lsblk                # List block devices
+fdisk -l             # Detailed partition info (sudo)
+df -h                # Disk usage
+
+# mount/unmount
+sudo mount /dev/sdX1 /mnt/mydisk        # Mount a device
+sudo umount /mnt/mydisk                 # Unmount it
+
+# View filesystem cache usage (page cache)
+free -h               # Look at the "buff/cache" field
+
+# clear cache (with caution)
+sudo sync; echo 3 | sudo tee /proc/sys/vm/drop_caches
+
+# list hardware devices
+lspci                # List PCI devices
+lsusb                # List USB devices
+dmesg | grep -i usb  # Boot log messages related to USB
+
+# manage device drivers
+lsmod                # List loaded kernel modules
+modprobe <module>    # Load a module
+rmmod <module>       # Remove a module
+
+# check what the os is managing right now
+top            # CPU, memory, and process summary
+iostat         # CPU and disk I/O stats (install via: sudo apt install sysstat)
+iotop          # Real-time disk I/O per process (sudo apt install iotop)
+
+
+
+
+# advanced search
+apt list --installed | grep -w 'jdk\|local'
+
+# hex editor
+ghex
+
+# using curl
+## Basic GET request:
+curl "https://api.example.com/data"
+## With query parameters:
+curl "https://api.example.com/data?param1=value1&param2=value2"
+## With headers (e.g., API keys):
+curl -H "Authorization: Bearer YOUR_API_KEY" "https://api.example.com/data"
+## With POST data:
+curl -X POST -H "Content-Type: application/json" -d '{"param1":"value1"}' https://api.example.com/data
+
+# httpie
+## GET request:
+http https://api.example.com/data
+## With headers and query parameters:
+http GET https://api.example.com/data param1==value1 Authorization:"Bearer YOUR_API_KEY"
+## POST request with JSON body:
+http POST https://api.example.com/data param1=value1 param2=value2
+
+# wget
+wget "https://api.example.com/data?param=value"
+
+
+

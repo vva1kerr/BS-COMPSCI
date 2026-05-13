@@ -1,0 +1,79 @@
+SSH + GITHUB SETUP
+==================
+
+HOW IT WORKS
+------------
+SSH authentication replaces typing your GitHub username and password.
+Instead, GitHub recognises your machine by your SSH key pair:
+  - Private key: ~/.ssh/ssh-key-name        (never share this)
+  - Public key:  ~/.ssh/ssh-key-name.pub     (this is on GitHub)
+
+
+FILES INVOLVED
+--------------
+~/.ssh/ssh-key-name       Your private SSH key
+~/.ssh/ssh-key-name.pub   Your public SSH key (uploaded to GitHub)
+~/.ssh/config                 Tells SSH which key to use for github.com
+~/.ssh/agent-env              Written on i3 startup, stores agent socket info
+~/.bashrc                     Sources agent-env so terminals can find the agent
+~/.config/i3/config           Starts the SSH agent and loads keys on login
+
+
+HOW THE AGENT WORKS
+-------------------
+When i3 starts it runs ssh-agent and saves the socket info to ~/.ssh/agent-env.
+Every new terminal sources that file via ~/.bashrc so they all share the same agent.
+The agent holds your unlocked keys in memory so you don't need to re-authenticate
+each time you push.
+
+
+SWITCHING A REPO FROM HTTPS TO SSH
+-----------------------------------
+If git push asks for a username, the repo is using HTTPS not SSH.
+Check with:
+    git remote -v
+
+If it shows https://github.com/... switch it to SSH:
+    git remote set-url origin git@github.com:USERNAME/REPO.git
+
+Example for this machine:
+    git remote set-url origin git@github.com:username/i3-ubuntu-dotfiles.git
+
+
+TESTING SSH CONNECTION
+----------------------
+    ssh -T git@github.com
+
+Expected response:
+    Hi username! You've successfully authenticated, but GitHub does not
+    provide shell access.
+
+If you see "Permission denied (publickey)" the agent has lost your key.
+Fix by reloading i3 (mod+shift+r) which restarts the agent and reloads keys.
+
+
+ADDING A NEW SSH KEY TO GITHUB
+--------------------------------
+1. Generate a new key:
+       ssh-keygen -t ed25519 -f ~/.ssh/keyname
+   Press Enter twice at the passphrase prompt for no passphrase.
+
+2. Copy the public key:
+       cat ~/.ssh/keyname.pub
+
+3. Go to GitHub → Settings → SSH and GPG keys → New SSH key
+   Paste the contents of the .pub file and save.
+
+4. The new key will be picked up automatically on next i3 reload
+   because the i3 autostart loops through all .pub files in ~/.ssh/.
+
+
+SSH CONFIG (~/.ssh/config)
+---------------------------
+Host github.com
+    IdentityFile ~/.ssh/ssh-key-name
+    User username
+    AddKeysToAgent yes
+
+AddKeysToAgent yes means the key is added to the agent on first use
+and cached for the rest of the session.

@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title>Chrome Devtools Cheatsheet</title>
+
+<meta name="description" content="Google Chrome Devtools Cheatsheet that is for helping web developers fully utilize one of the most valuable tools there is for developing the front-end of a website or app.">
+<meta name="author" content="Jared Williams">
+
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico">
+
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/main.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.1/modernizr.min.js"></script>
+
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</head>
+<body>
+<!--[if lt IE 7]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+
+<header>
+	<h1><a href="http://anti-code.com/devtools-cheatsheet/">Chrome Devtools Cheatsheet</a></h1>
+
+	<div class="share">
+		<div class="git-btn"><a href="https://twitter.com/share" class="twitter-share-button" data-via="jaredwilli" data-related="jaredwilli">Tweet</a></div>
+
+		<!-- <div class="fb-like" data-href="http://anti-code.com/devtools-cheatsheet/" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div> -->
+
+		<div class="git-btn"><div class="plus g-plusone" data-size="medium" data-href="http://anti-code.com/devtools-cheatsheet/"></div></div>
+
+		<div class="git-btn"><iframe src="http://ghbtns.com/github-btn.html?user=jaredwilli&repo=devtools-cheatsheet&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe></div>
+
+		<div class="git-btn"><iframe src="http://ghbtns.com/github-btn.html?user=jaredwilli&repo=devtools-cheatsheet&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe></div>
+
+	</div>
+</header>
+
+<div role="main">
+
+	<section id="devtools">
+		<h2> Opening Devtools <a href="http://goo.gl/N68rh" class="docs">◊</a></h2>
+
+		<p> To access the DevTools, on any web page or app in Google Chrome you can use one of these options: </p>
+
+      <ul>
+        <li> Open the <b>Chrome menu </b> <img src="img/toolsmenu.png" alt="Chrome menu"> at the top-right of your browser window, then select <b>Tools</b> &gt; <b>Developer Tools</b>.</li>
+        <li> Right-click on any page element and select <b>Inspect Element</b>.</li>
+      </ul>
+
+      <table>
+        <tbody>
+          <tr>
+            <th></th>
+            <th> Windows / Linux </th>
+            <th> Mac </th>
+          </tr>
+          <tr>
+            <td> Open Developer Tools </td>
+            <td> <span class="kbd">F12</span>, <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">I</span> </td>
+            <td> <span class="kbd">Cmd</span> + <span class="kbd">Opt</span> + <span class="kbd">I</span> </td>
+          </tr>
+          <tr>
+            <td> Open / switch from inspect element mode and browser window </td>
+            <td> <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">C</span> </td>
+            <td> <span class="kbd">Cmd</span> + <span class="kbd">Shift</span> + <span class="kbd">C</span> </td>
+          </tr>
+          <tr>
+            <td> Open Developer Tools and bring focus to the console </td>
+            <td> <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">J</span> </td>
+            <td> <span class="kbd">Cmd</span> + <span class="kbd">Opt</span> + <span class="kbd">J</span> </td>
+          </tr>
+          <tr>
+            <td> Inspect the Inspector (<em>undock first one and press</em>) </td>
+            <td> <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">J</span> </td>
+            <td> <span class="kbd">Cmd</span> + <span class="kbd">Opt</span> + <span class="kbd">J</span> </td>
+          <tr>
+        </tbody>
+      </table>
+
+      <p> To open up the General Settings dialog type <span class="kbd">?</span> or <span class="kbd">F1</span> when the Developer Tools window is open. Press <span class="kbd">Esc</span> to close the settings dialog.</p>
+
+	</section>
+
+	<section id="global">
+		<h2> All Panels </h2>
+
+		<table>
+          <tbody>
+            <tr>
+            </tr>
+            <tr>
+              <th></th>
+              <th> Windows / Linux </th>
+              <th> Mac </th>
+            </tr>
+            <tr>
+              <td> Show General Settings dialog </td>
+              <td> <span class="kbd">?</span>, <span class="kbd">F1</span> </td>
+              <td> <span class="kbd">?</span> </td>
+            </tr>
+            <tr>
+              <td> Next panel                     </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">]</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">]</span> </td>
+            </tr>
+            <tr>
+              <td> Previous panel                 </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">[</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">[</span> </td>
+            </tr>
+            <tr>
+              <td> Backward in panel History     </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">Alt</span> + <span class="kbd">[</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">Alt</span> + <span class="kbd">[</span> </td>
+            </tr>
+            <tr>
+              <td> Forward in panel history      </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">Alt</span> + <span class="kbd">]</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">Alt</span> + <span class="kbd">]</span> </td>
+            </tr>
+            <tr>
+              <td> Jump to panel 1-9 (<em>when enabled in General Settings</em>) </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">1-9</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">1-9</span> </td>
+            </tr>
+            <tr>
+              <td> Toggle Console / close settings dialog when open </td>
+              <td> <span class="kbd">Esc</span> </td>
+              <td> <span class="kbd">Esc</span> </td>
+            </tr>
+            <tr>
+              <td> Refresh the page               </td>
+              <td> <span class="kbd">F5</span>, <span class="kbd">Ctrl</span> + <span class="kbd">R</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">R</span> </td>
+            </tr>
+            <tr>
+              <td> Refresh the page ignoring cached content          </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">F5</span>, <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">R</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">Shift</span> + <span class="kbd">R</span> </td>
+            </tr>
+            <tr>
+              <td> Text search within current file or panel </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">F</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">F</span> </td>
+            </tr>
+            <tr>
+              <td> Text search across all sources </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">F</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">Alt</span> + <span class="kbd">F</span> </td>
+            </tr>
+            <tr>
+              <td> Search by filename (<em>except on Timeline</em>) </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">O</span>, <span class="kbd">Ctrl</span> + <span class="kbd">O</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">O</span>, <span class="kbd">Cmd</span> + <span class="kbd">O</span> </td>
+            </tr>
+            <tr>
+              <td> Restore default text size      </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">0</span> </td>
+              <td> <span class="kbd">Shift</span> + <span class="kbd">0</span> </td>
+            </tr>
+            <tr>
+              <td> Zoom in                        </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">+</span> </td>
+              <td> <span class="kbd">Shift</span> + <span class="kbd">+</span> </td>
+            </tr>
+            <tr>
+              <td> Zoom out                       </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">-</span> </td>
+              <td> <span class="kbd">Shift</span> + <span class="kbd">-</span> </td>
+            </tr>
+          </tbody>
+        </table>
+
+	</section>
+
+	<section id="elements">
+		<h2> Elements Panel <a href="http://goo.gl/DjP6v" class="docs">◊</a></h2>
+
+        <table>
+          <tbody>
+            <tr>
+              <th></th>
+              <th> Windows / Linux </th>
+              <th> Mac </th>
+            </tr>
+            <tr>
+              <td> Undo change                    </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">Z</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">Z</span> </td>
+            </tr>
+            <tr>
+              <td> Redo change                    </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">Y</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">Y</span>, <span class="kbd">Cmd</span> + <span class="kbd">Shift</span> + <span class="kbd">Z</span> </td>
+            </tr>
+            <tr>
+              <td> Navigate                       </td>
+              <td> <span class="kbd">Up</span>, <span class="kbd">Down</span> </td>
+              <td> <span class="kbd">Up</span>, <span class="kbd">Down</span> </td>
+            </tr>
+            <tr>
+              <td> Expand / collapse node         </td>
+              <td> <span class="kbd">Right</span>, <span class="kbd">Left</span> </td>
+              <td> <span class="kbd">Right</span>, <span class="kbd">Left</span> </td>
+            </tr>
+            <tr>
+              <td> Expand node </td>
+              <td> <span class="kbd">Single-click on tag</span> </td>
+              <td> <span class="kbd">Single-click on tag</span> </td>
+            </tr>
+            <tr>
+              <td> Edit attribute </td>
+              <td> <span class="kbd">Enter</span>, <span class="kbd">Double-click on attribute</span> </td>
+              <td> <span class="kbd">Enter</span>, <span class="kbd">Double-click on attribute</span> </td>
+            </tr>
+            <tr>
+              <td> Hide element                   </td>
+              <td> <span class="kbd">H</span> </td>
+              <td> <span class="kbd">H</span> </td>
+            </tr>
+            <tr>
+              <td> Toggle edit as HTML            </td>
+              <td> <span class="kbd">F2</span> </td>
+              <td>  </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p> Right-clicking an element you can: </p>
+
+        <ul>
+          <li> Force element psuedo states: (<code>:active</code>, <code>:hover</code>, <code>:focus</code>, <code>:visited</code>) </li>
+          <li> Set breakpoints on the elements: (Subtree modifications, Attribute modification, Node removal) </li>
+          <li>Clear console</li>
+        </ul>
+
+	</section>
+
+
+
+	<section id="styles">
+		<h2> Styles Sidebar <a href="http://goo.gl/ZisTc" class="docs">◊</a></h2>
+
+		<table>
+          <tbody>
+            <tr>
+              <th></th>
+              <th> Windows / Linux </th>
+              <th> Mac </th>
+            </tr>
+            <tr>
+              <td> Edit rule </td>
+              <td> <span class="kbd">Single-click</span> </td>
+              <td> <span class="kbd">Single-click</span> </td>
+            </tr>
+            <tr>
+              <td> Insert new property </td>
+              <td> <span class="kbd">Single-click on whitespace</span> </td>
+              <td> <span class="kbd">Single-click on whitespace</span> </td>
+            </tr>
+            <tr>
+              <td> Go to line of style rule property declaration in source </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">Click on property</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">Click on property</span> </td>
+            </tr>
+            <tr>
+              <td> Go to line of property value declaration in source </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">Click on property value</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">Click on property value</span> </td>
+            </tr>
+            <tr>
+              <td> Go to line of style rule property declaration in source </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">Click on property</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">Click on property</span> </td>
+            </tr>
+            <tr>
+              <td> Go to line of property value declaration in source </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">Click on property value</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">Click on property value</span> </td>
+            </tr>
+            <tr>
+              <td> Cycle through the color definition value </td>
+              <td> <span class="kbd">Shift</span> + <span class="kbd">Click on color picker box</span> </td>
+              <td> <span class="kbd">Shift</span> + <span class="kbd">Click on color picker box</span> </td>
+            </tr>
+            <tr>
+              <td> View auto-complete suggestions         </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">Space</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">Space</span> </td>
+            </tr>
+            <tr>
+              <td> Edit next / previous property          </td>
+              <td> <span class="kbd">Tab</span>, <span class="kbd">Shift</span> + <span class="kbd">Tab</span> </td>
+              <td> <span class="kbd">Tab</span>, <span class="kbd">Shift</span> + <span class="kbd">Tab</span> </td>
+            </tr>
+            <tr>
+              <td> Increment / decrement value            </td>
+              <td> <span class="kbd">Up</span>, <span class="kbd">Down</span> </td>
+              <td> <span class="kbd">Up</span>, <span class="kbd">Down</span> </td>
+            </tr>
+            <tr>
+              <td> Increment / decrement value by 10      </td>
+              <td> <span class="kbd">Shift</span> + <span class="kbd">Up</span>, <span class="kbd">Shift</span> + <span class="kbd">Down</span> </td>
+              <td> <span class="kbd">Shift</span> + <span class="kbd">Up</span>, <span class="kbd">Shift</span> + <span class="kbd">Down</span> </td>
+            </tr>
+            <tr>
+              <td> Increment / decrement value by 10      </td>
+              <td> <span class="kbd">PgUp</span>, <span class="kbd">PgDown</span> </td>
+              <td> <span class="kbd">PgUp</span>, <span class="kbd">PgDown</span> </td>
+            </tr>
+            <tr>
+              <td> Increment / decrement value by 100     </td>
+              <td> <span class="kbd">Shift</span> + <span class="kbd">PgUp</span>, <span class="kbd">Shift</span> + <span class="kbd">PgDown</span> </td>
+              <td> <span class="kbd">Shift</span> + <span class="kbd">PgUp</span>, <span class="kbd">Shift</span> + <span class="kbd">PgDown</span> </td>
+            </tr>
+            <tr>
+              <td> Increment / decrement value by 0.1     </td>
+              <td> <span class="kbd">Alt</span> + <span class="kbd">Up</span>, <span class="kbd">Alt</span> + <span class="kbd">Down</span> </td>
+              <td> <span class="kbd">Opt</span> + <span class="kbd">Up</span>, <span class="kbd">Opt</span> + <span class="kbd">Down</span> </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          <img src="img/attributes.png" alt="Element Pseudostates" />
+          Emulate an element's pseudo state (<code>:active</code>, <code>:hover</code>, <code>:focus</code>, <code>:visited</code>)
+        </p>
+        <p>
+          <img src="img/plus.png" alt="Adding style selectors" />
+          Add new style selectors
+        </p>
+
+	</section>
+
+	<!-- Nothing to add here yet?
+	<section id="resources">
+		<h2>Resources Panel</h2>
+
+		<p><a href="http://goo.gl/GbfQO">Resources Panel Documentation</a></p>
+	</section>
+	-->
+
+	<section id="network">
+		<h2> Network Panel <a href="http://goo.gl/y7rt0" class="docs">◊</a></h2>
+
+		<p> Understanding the information displayed within each column </p>
+
+		<ul class="netCols">
+			<li>
+				<img src="img/network-sizeCol.png" alt="Size column details" class="net" />
+				<div class="details">
+					<span class="black"><strong> Size</strong>: Total size of resource </span><br />
+					<span class="gray"><strong> Content</strong>: Gzipped size of resource </span>
+				</div>
+			</li>
+			<li>
+				<img src="img/network-timeCol.png" alt="Time column details" class="net" />
+				<div class="details">
+					<span class="black"><strong> Time</strong>: total duration to get response </span><br />
+					<span class="gray"><strong> Latency</strong>: time taken to get first byte </span>
+				</div>
+			</li>
+			<li>
+				<img src="img/network-initiatorCol.png" alt="Initiator column details" class="net" />
+				<div class="details">
+					<span class="black"> File that initialized the resource load </span><br />
+					<span class="gray"> How the resource load was scheduled </span>
+				</div>
+				<!-- parser or script: scripts must download and exectuted first before initializing resource load -->
+			</li>
+		</ul>
+
+		<ul class="netCols timeline">
+			<li>
+				<img src="img/networkTimelineSorting.png" alt="Sorting Network Timeline Resources" class="line" />
+				Select the Timeline heading to change sort modes for the network.
+			</li>
+			<li>
+				<img src="img/network-timlineWaterfall.png" alt="Resource Waterfall" />
+				<span class="latency"><strong> Transparent</strong>: Latency load time</span><br />
+				<span class="total"><strong> Solid</strong>: Total load time</span>
+			</li>
+		</ul>
+
+		Export network data into <a href="http://goo.gl/eDSY2">HAR format</a>
+
+	</section>
+
+	<section id="sources">
+		<h2> Sources Panel <a href="http://goo.gl/VsxZA" class="docs">◊</a></h2>
+
+		<table>
+          <tbody>
+            <tr>
+              <th></th>
+              <th> Windows / Linux </th>
+              <th> Mac </th>
+            </tr>
+            <tr>
+              <td> Pause / resume script execution      </td>
+              <td> <span class="kbd">F8</span>, <span class="kbd">Ctrl</span> + <span class="kbd">\</span> </td>
+              <td> <span class="kbd">F8</span>, <span class="kbd">Cmd</span> + <span class="kbd">\</span> </td>
+            </tr>
+            <tr>
+              <td> Step over next function call         </td>
+              <td> <span class="kbd">F10</span>, <span class="kbd">Ctrl</span> + <span class="kbd">'</span> </td>
+              <td> <span class="kbd">F10</span>, <span class="kbd">Cmd</span> + <span class="kbd">'</span> </td>
+            </tr>
+            <tr>
+              <td> Step into next function call         </td>
+              <td> <span class="kbd">F11</span>, <span class="kbd">Ctrl</span> + <span class="kbd">;</span> </td>
+              <td> <span class="kbd">F11</span>, <span class="kbd">Cmd</span> + <span class="kbd">;</span> </td>
+            </tr>
+            <tr>
+              <td> Step out of current function         </td>
+              <td> <span class="kbd">Shift</span> + <span class="kbd">F11</span>, <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">;</span> </td>
+              <td> <span class="kbd">Shift</span> + <span class="kbd">F11</span>, <span class="kbd">Cmd</span> + <span class="kbd">Shift</span> + <span class="kbd">;</span> </td>
+            </tr>
+            <tr>
+              <td> Select next call frame               </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">.</span> </td>
+              <td> <span class="kbd">Opt</span> + <span class="kbd">.</span> </td>
+            </tr>
+            <tr>
+              <td> Select previous call frame           </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">,</span> </td>
+              <td> <span class="kbd">Opt</span> + <span class="kbd">,</span> </td>
+            </tr>
+            <tr>
+              <td> Toggle breakpoint condition          </td>
+              <td> <span class="kbd">Click on line number</span>, <span class="kbd">Ctrl</span> + <span class="kbd">B</span> </td>
+              <td> <span class="kbd">Click on line number</span>, <span class="kbd">Cmd</span> + <span class="kbd">B</span> </td>
+            </tr>
+            <tr>
+              <td> Edit breakpoint condition            </td>
+              <td> <span class="kbd">Right-click on line number</span> </td>
+              <td> <span class="kbd">Right-click on line number</span> </td>
+            </tr>
+            <!-- <tr>
+              <td> Delete text on current line </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">D</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">D</span> </td>
+            </tr> -->
+            <tr>
+              <td> Delete individual words </td>
+              <td> <span class="kbd">Alt</span> + <span class="kbd">Delete</span> </td>
+              <td> <span class="kbd">Opt</span> + <span class="kbd">Delete</span> </td>
+            </tr>
+            <tr>
+              <td> Comment a line or selected text </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">/</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">/</span> </td>
+            </tr>
+            <tr>
+              <td> Save changes to local modifications </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">S</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">S</span> </td>
+            </tr>
+            <tr>
+              <td> Go to line                           </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">G</span> </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">G</span> </td>
+            </tr>
+            <tr>
+              <td> Search by filename </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">O</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">O</span> </td>
+            </tr>
+            <tr>
+              <td> Jump to line number </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">P</span> + <span class="kbd">:&lt;number&gt;</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">P</span> + <span class="kbd">:&lt;number&gt;</span> </td>
+            </tr>
+            <tr>
+              <td> Jump to column </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">O</span> + <span class="kbd">:&lt;number&gt;</span> + <span class="kbd">:&lt;number&gt;</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">O</span> + <span class="kbd">:&lt;number&gt;</span> + <span class="kbd">:&lt;number&gt;</span> </td>
+            </tr>
+            <tr>
+              <td> Go to member </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">O</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">Shift</span> + <span class="kbd">O</span> </td>
+            </tr>
+            <tr>
+              <td> Toggle console and evaluate code selected in Sources panel </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">E</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">Shift</span> + <span class="kbd">E</span> </td>
+            </tr>
+            <tr>
+              <td> Run snippet </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">Enter</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">Enter</span> </td>
+            </tr>
+            <tr>
+              <td> Toggle comment </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">/</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">/</span> </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <img src="img/pauseOnExceptionsButton.png" alt="Pause on Exception Button" />
+          Don't pause on exceptions
+        </p>
+        <p>
+          <img src="img/pauseOnUncaughtExceptionsButton.png" alt="Pause on All Exceptions" />
+          Pause on All exceptions (including those caught within try/catch blocks)
+        </p>
+        <p>
+          <img src="img/pauseOnUncaughtErrorsButton.png" alt="Pause on Uncaught Exceptions" />
+          Pause on uncaught exceptions (usually the one you want)
+        </p>
+
+		<a href="http://goo.gl/dZSwr" class="docs">Exceptions</a>
+	</section>
+
+	<section id="timeline">
+		<h2> Timeline Panel <a href="http://goo.gl/wsxO3" class="docs">◊</a></h2>
+
+		<table>
+          <tbody>
+            <tr>
+              <th></th>
+              <th> Windows / Linux </th>
+              <th> Mac </th>
+            </tr>
+            <tr>
+              <td> Start / stop recording       </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">E</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">E</span> </td>
+            </tr>
+            <tr>
+              <td> Save timeline data           </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">S</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">S</span> </td>
+            </tr>
+            <tr>
+              <td> Load timeline data           </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">O</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">O</span> </td>
+            </tr>
+          </tbody>
+        </table>
+
+	</section>
+
+	<section id="profiles">
+		<h2> Profiles Panel <a href="http://goo.gl/WHAui" class="docs">◊</a></h2>
+
+		<table>
+          <tbody>
+            <tr>
+              <th></th>
+              <th> Windows / Linux </th>
+              <th> Mac </th>
+            </tr>
+            <tr>
+              <td> Start / stop recording       </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">E</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">E</span> </td>
+            </tr>
+          </tbody>
+        </table>
+
+		<p> Profiling types: </p>
+
+		<ul>
+			<li><strong><a href="http://goo.gl/igHcw"> CPU profiler</a></strong>: shows where execution time is spent in your page's JavaScript functions </li>
+			<li><strong><a href="http://goo.gl/9mBFW"> Heap profiler</a></strong>: shows memory distribution by your page's JavaScript objects and related DOM nodes </li>
+		</ul>
+	</section>
+
+	<section id="searching">
+		<h2> Search Shortcuts </h2>
+
+		<p> Find or navigate to specific files, methods or line numbers in an web app within the Sources panel </p>
+
+		<table>
+			<tbody><tr><th></th><th> Windows / Linux </th><th> Mac </th></tr>
+			<tr><td> Search scripts, stylesheets and snippets by filename 	</td><td> Ctrl + O 			</td><td> ⌘ + O </td></tr>
+			<tr><td> Text search within current file 						</td><td> Ctrl + F 			</td><td> ⌘ + F </td></tr>
+			<tr><td> Text search across all sources 						</td><td> Ctrl + Shift + F 	</td><td> ⌘ + Alt + F </td></tr>
+			<tr><td> Filter/navigate to a JavaScript function/CSS rule when viewing a file </td><td> Ctrl + Shift + O </td><td> ⌘ + Shift + O </td></tr>
+			<tr><td> Launch line number dialog when viewing a file 			</td><td> Ctrl + K 			</td><td> ⌘ + L </td></tr>
+			<tr><td> Evaluate code selected in scripts in the console		</td><td> Ctrl + Shift + E 	</td><td> ⌘ + Shift + E </td></tr>
+			<tr><td> Find next occurence of highlighted text and select it    	</td><td> Ctrl + D 			</td><td> ⌘ + D </td></tr>
+			<tr><td> Find next occurence of highlighted text and select it    	</td><td> Ctrl + M 			</td><td> ⌘ + M </td></tr>
+		</tbody></table>
+
+	</section>
+
+	<section id="console">
+		<h2> Console <a href="http://goo.gl/cu0vw" class="docs">◊</a></h2>
+
+		<table>
+          <tbody>
+            <tr>
+              <th></th>
+              <th> Windows / Linux </th>
+              <th> Mac </th>
+            </tr>
+            <tr>
+              <td> Next suggestion                      </td>
+              <td> <span class="kbd">Tab</span> </td>
+              <td> <span class="kbd">Tab</span> </td>
+            </tr>
+            <tr>
+              <td> Previous suggestion                  </td>
+              <td> <span class="kbd">Shift</span> + <span class="kbd">Tab</span> </td>
+              <td> <span class="kbd">Shift</span> + <span class="kbd">Tab</span> </td>
+            </tr>
+            <tr>
+              <td> Accept suggestion                    </td>
+              <td> <span class="kbd">Right</span> </td>
+              <td> <span class="kbd">Right</span> </td>
+            </tr>
+            <tr>
+              <td> Previous command / line              </td>
+              <td> <span class="kbd">Up</span> </td>
+              <td> <span class="kbd">Up</span> </td>
+            </tr>
+            <tr>
+              <td> Next command / line                  </td>
+              <td> <span class="kbd">Down</span> </td>
+              <td> <span class="kbd">Down</span> </td>
+            </tr>
+            <tr>
+              <td> Clear Console                        </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">L</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">K</span>, <span class="kbd">Opt</span> + <span class="kbd">L</span> </td>
+            </tr>
+            <tr>
+              <td> Multi-line entry                      </td>
+              <td> <span class="kbd">Shift</span> + <span class="kbd">Enter</span> </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">Return</span> </td>
+            </tr>
+            <tr>
+              <td> Execute                              </td>
+              <td> <span class="kbd">Enter</span> </td>
+              <td> <span class="kbd">Return</span> </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p> Right-clicking on console: </p>
+
+        <ul>
+          <li> XMLHTTPRequest logging: Turn on to view the XHR log </li>
+          <li> Preserve log upon navigation </li>
+          <li> Filter: Hide and unhide messages from script files </li>
+          <li> Clear console: Clear all console messages </li>
+        </ul>
+
+	</section>
+
+	<section id="screencasting">
+		<h2 id="screencasting"> Screencasting </h2>
+
+        <table>
+          <tbody>
+            <tr>
+              <th></th>
+              <th> Windows / Linux </th>
+              <th> Mac </th>
+            </tr>
+            <tr>
+              <td> Pinch zoom in and out       </td>
+              <td> <span class="kbd">Alt</span> + <span class="kbd">Scroll</span>,<span class="kbd">Ctrl</span> + <span class="kbd">Click and drag with two fingers</span>  </td>
+              <td> <span class="kbd">Opt</span> + <span class="kbd">Scroll</span>, <span class="kbd">Cmd</span> + <span class="kbd">Click and drag with two fingers</span> </td>
+            </tr>
+            <tr>
+              <td> Inspect element tool           </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">C</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">Shift</span> + <span class="kbd">C</span> </td>
+            </tr>
+          </tbody>
+        </table>
+    </section>
+
+
+    <section id="emulation">
+    	<h2 id="emulation"> Emulation </h2>
+
+        <table>
+          <tbody>
+            <tr>
+              <th></th>
+              <th> Windows / Linux </th>
+              <th> Mac </th>
+            </tr>
+            <tr>
+              <td> Pinch zoom in and out       </td>
+              <td> <span class="kbd">Shift</span> + <span class="kbd">Scroll</span> </td>
+              <td> <span class="kbd">Shift</span> + <span class="kbd">Scroll</span> </td>
+            </tr>
+          </tbody>
+        </table>
+    </section>
+
+
+	<section id="console-api">
+		<h2> Console API <a href="http://goo.gl/Pfxc6" class="docs">◊</a></h2>
+
+		<table>
+			<tbody><tr><th> Command </th><th> Description </th></tr>
+
+			<tr><td> console.assert(expression[, object, ...]) </td>		<td> Tests that an expression is true. If not, it will write a message to the console and throw an exception. </td></tr>
+
+			<tr><td> console.clear() </td>									<td> Clears the console. </td></tr>
+
+			<tr><td> console.constructor() </td>							<td>  </td></tr>
+			<tr><td> console.count([title]) </td>							<td> Writes the number of times that the line of code where count was called was executed. The optional argument title will print a message in addition to the number of the count. </td></tr>
+
+			<tr><td> console.debug(object[, object, ...]) </td>				<td> Writes a message to the console, including a hyperlink to the line where it was called. </td></tr>
+
+			<tr><td> console.dir(object) </td>								<td> Prints an interactive listing of all properties of the object. This looks identical to the view that you would see in the DOM tab. </td></tr>
+			<tr><td> console.dirxml(node) </td>								<td> Prints the XML source tree of an HTML or XML element. This looks identical to the view that you would see in the HTML tab. You can click on any node to inspect it in the HTML tab. </td></tr>
+
+			<tr><td> console.error(object[, object, ...]) </td>				<td> Writes a message to the console with the visual "error" icon and color coding and a hyperlink to the line where it was called. </td></tr>
+
+			<tr><td> console.exception(error-object[, object, ...]) </td>	<td> Prints an error message together with an interactive stack trace of JavaScript execution at the point where the exception occurred. </td></tr>
+
+			<tr><td> console.group(object[, object, ...]) </td>				<td> Writes a message to the console and opens a nested block to indent all future messages sent to the console. Call console.groupEnd() to close the block. </td></tr>
+			<tr><td> console.groupCollapsed(object[, object, ...]) </td>	<td> Like console.group(), but block is initially collapsed. </td></tr>
+			<tr><td> console.groupEnd() </td>								<td> Closes the most recently opened block created by a call to console.group() or console.groupCollapsed(). </td></tr>
+
+			<tr><td> console.hasOwnProperty() </td>							<td>  </td></tr>
+
+			<tr><td> console.info(object[, object, ...]) </td>				<td> Writes a message to the console with the visual "info" icon and color coding and a hyperlink to the line where it was called. </td></tr>
+
+			<tr><td> console.isPrototypeOf() </td>							<td>  </td></tr>
+
+			<tr><td> console.keys() </td>									<td> Gives you the names of all the elements of an object. </td></tr>
+
+			<tr><td> console.log(object[, object, ...]) </td>				<td> Writes a message to the console. You may pass as many arguments as you'd like, and they will be joined together in a space-delimited line. You can use printf-like string substitution patterns as well which are:
+				<ul class="log-patterns">
+					<li> String: %s - 				<code> console.log('The %s is a %s', animal, cat); </code> </li>
+					<li> Integer: %d, %i - 			<code> console.log('Number %d plus %i', 1, 2); </code> <em>*integer not yet supported</em> </li>
+					<li> Floating point number: %f - <code> console.log('Floating points: %f', 1.5); </code> <em>*numeric formatting not yet supported</em> </li>
+					<li> Hyperlink: %o - 			<code> console.log('Live laugh code at $o', 'http://anti-code.com' ); </code> </li>
+					<li> Style formatting: %c - 	<code> console.log('%c This is white text on a black background', 'color:#fff;background:#000;'); </code> </li>
+				</ul>
+			</td></tr>
+
+			<tr><td> console.memory </td>									<td> An object that returns: jsHeapSizeLimit, totalJSHeapSize, usedJSHeapSize </td></tr>
+
+			<tr><td> console.profile([title]) </td>							<td> Turns on the JavaScript profiler. The optional argument title would contain the text to be printed in the header of the profile report. </td></tr>
+			<tr><td> console.profileEnd() </td>								<td> Turns off the JavaScript profiler and prints its report. </td></tr>
+
+			<tr><td> console.propertyIsEnumerable() </td>					<td>  </td></tr>
+
+			<tr><td> console.table(data[, columns]) </td>					<td> Allows to log provided data using tabular layout. The method takes one required parameter that represents table like data (array of arrays or list of objects). </td></tr>
+
+			<tr><td> console.time([name]) </td>								<td> Creates a new timer under the given name. Call console.timeEnd(name) with the same name to stop the timer and print the time elapsed. </td></tr>
+			<tr><td> console.timeEnd() </td>								<td> Stops a timer created by a call to console.time(name) and writes the time elapsed. </td></tr>
+
+			<tr><td> console.timeStamp() </td>								<td>  </td></tr>
+			<tr><td> console.toLocaleString() </td>							<td>  </td></tr>
+			<tr><td> console.toString() </td>								<td>  </td></tr>
+
+			<tr><td> console.trace() </td>									<td> Prints an interactive stack trace of JavaScript execution at the point where it is called. </td></tr>
+
+			<tr><td> console.values() </td>									<td> Gives you all the values of those elements. </td></tr>
+
+			<tr><td> console.warn(object[, object, ...]) </td>				<td> Writes a message to the console with the visual "warning" icon and color coding and a hyperlink to the line where it was called. </td></tr>
+
+			<tr><td> console.valueOf() </td>								<td>  </td></tr>
+
+			<tr><td> window.onerror </td>									<td> When exceptions are thrown in the window context and is not caught by any try/catch block, the function will be invoked with the exception's message, the URL of the file where the exception was thrown and the line number in that file passed as three arguments in that order.<br />
+				<code>
+				window.onerror = function(msg, url, line) {
+					console.log('message: ' + msg, 'url: ' + url, 'line: ' + line);
+				};
+				</code>
+			</td></tr>
+		</tbody></table>
+
+	</section>
+
+	<section id="command-line-api">
+		<h2>Command Line API <a href="http://goo.gl/TgehZ" class="docs">◊</a></h2>
+
+		<table>
+			<tbody><tr><th> Command </th><th> Description </th></tr>
+			<tr><td> $$ </td>								<td> Returns an array of elements that match the given CSS selector. </td></tr>
+			<tr><td> $0 </td>								<td> The currently-selected object in the inspector. </td></tr>
+			<tr><td> $_ </td>								<td> The previously evaluated statement </td></tr>
+			<tr><td> $1 </td>								<td> The previously-selected object in the inspector. </td></tr>
+			<tr><td> $n(index) </td>						<td> Access to an array of last 5 inspected elements. </td></tr>
+
+			<tr><td> dir(object) </td>						<td> Prints an interactive listing of all properties of the object. This looks identical to the view that you would see in the DOM tab. </td></tr>
+			<tr><td> dirxml(node) </td>						<td> Prints the XML source tree of an HTML or XML element. This looks identical to the view that you would see in the HTML tab. You can click on any node to inspect it in the HTML tab. </td></tr>
+
+			<!-- <tr><td> cd(window) </td>						<td> By default, command line expressions are relative to the top-level window of the page. cd() allows you to use the window of a frame in the page instead. </td></tr> -->
+
+			<tr><td> clear() </td>							<td> Clears the console. </td></tr>
+			<tr><td> copy() </td>							<td> Copies everything passed to it to the clipboard. </td></tr>
+
+			<tr><td> inspect(object[, tabName]) </td>		<td> Inspects an object in the most suitable tab, or the tab identified by the optional argument tabName. </td></tr>
+
+			<tr><td> keys(object) </td>						<td> Returns an array containing the names of all properties of the object. </td></tr>
+			<tr><td> values(object) </td>					<td> Returns an array containing the values of all properties of the object. </td></tr>
+			<!-- <tr><td> debug(fn) </td>						<td> Adds a breakpoint on the first line of a function. </td></tr>
+			<tr><td> undebug(fn) </td>						<td> Removes the breakpoint on the first line of a function. </td></tr>
+
+			<tr><td> monitor(fn) </td>						<td> Turns on logging for all calls to a function. </td></tr>
+			<tr><td> unmonitor(fn) </td>					<td> Turns off logging for all calls to a function. </td></tr> -->
+
+			<tr><td> monitorEvents(object[, types]) </td>	<td> Turns on logging for all events dispatched to an object. The optional argument types may specify a specific family of events to log. The most commonly used values for types are "mouse" and "key". The full list of available types includes "composition", "contextmenu", "drag", "focus", "form", "key", "load", "mouse", "mutation", "paint", "scroll", "text", "ui", and "xul". </td></tr>
+			<tr><td> unmonitorEvents(object[, types]) </td>	<td> Turns off logging for all events dispatched to an object. </td></tr>
+
+			<tr><td> performance </td>						<td>  </td></tr>
+			<tr><td> performance.timing </td>				<td>  </td></tr>
+			<tr><td> performance.memory </td>				<td>  </td></tr>
+			<tr><td> performance.navigation </td>			<td>  </td></tr>
+
+			<tr><td> profile([title]) </td>					<td> Turns on the JavaScript profiler. The optional argument title would contain the text to be printed in the header of the profile report. </td></tr>
+			<tr><td> profileEnd() </td>						<td> Turns off the JavaScript profiler and prints its report. </td></tr>
+		</tbody></table>
+
+	</section>
+
+	<section id="flags">
+		<h2> Flags <a href="http://goo.gl/0azd" class="docs">◊</a></h2>
+
+		<table>
+			<tbody><tr><th> Feature </th><th> Description </th></tr>
+			<tr><td> -disable-javascript 		</td><td> Disable JavaScript from command line. </td></tr>
+			<tr><td> -disable-images 			</td><td> Disable images. 			</td></tr>
+			<tr><td> -disable-java 				</td><td> Disable Java. 			</td></tr>
+			<tr><td> -disable-plugins 			</td><td> Disable plugins. 			</td></tr>
+			<tr><td> -disable-popup-blocking 	</td><td> Disable popup blocking. 	</td></tr>
+			<tr><td> -start-maximized 			</td><td> Start Chrome fullscreen 	</td></tr>
+		</tbody></table>
+
+		<p> For example: <em> "C:\Documents and Settings\%username%\Local Settings\Application Data\Google\Chrome" -disable-javascript </em></p>
+
+	</section>
+
+	<section id="themes">
+		<h2> DevTools Themes <a href="http://devthemez.com/" class="docs">◊</a></h2>
+
+		<ul class="links">
+			<li><a href="http://goo.gl/NNzwh"> MNML Theme </a></li>
+			<li><a href="http://goo.gl/KgNfU"> Monokai Dark </a></li>
+			<li><a href="http://goo.gl/tcELr"> Tomorrow Theme </a></li>
+			<li><a href="http://goo.gl/Ou6WA"> IR_Black Theme </a></li>
+			<li><a href="http://goo.gl/5ddPs"> IR_Black Theme with sidebar colors </a></li>
+			<li><a href="http://goo.gl/W0INT"> Solarized Dark </a></li>
+			<li><a href="http://goo.gl/MxIjz"> Ruby Blue </a></li>
+			<li><a href="http://goo.gl/zK2Sn"> Expresso </a></li>
+			<li><a href="http://goo.gl/T1SeZ"> Inversion </a></li>
+			<li><a href="http://goo.gl/viN4b"> Dark Theme </a></li>
+			<li><a href="http://goo.gl/BVIDe"> Dark Dev </a></li>
+			<li><a href="http://goo.gl/E5NJh"> WebLight Theme </a></li>
+		</ul>
+
+		<p>
+			Tweak your skin for the DevTools using the DevTools themselves by undocking them then hitting <code> Ctrl + Alt + I </code> or <code> ⌃ + Alt + I </code> on Mac.
+			<br />
+			Override the classes/IDs of Devtools for your theme via:
+		</p>
+		<ul>
+			<li> Windows: C:/Users/%username%/AppData/Local/Google/Chrome/User Data/Default/User StyleSheets/Custom.css </li>
+			<li> Mac OSX: ~/Library/Application Support/Google/Chrome/Default/User StyleSheets/Custom.css </li>
+  			<li> Ubuntu: ~/.config/chromium/Default/User StyleSheets/Custom.css </li>
+  		</ul>
+
+		<p> Read about how to <a href="http://goo.gl/3hOAW"> customize your Devtools </a>.</p>
+
+	</section>
+
+	<section id="other-shortcuts">
+		<h2> Other Chrome Shortcuts </h2>
+
+		<p>Here are some additional Chrome shortcuts which are useful for general use within the browser not specific to the DevTools. <a href="http://goo.gl/PsTNm">View all Chrome shortcuts</a> for Windows, Mac, and Linux. </p>
+
+        <table>
+          <tbody>
+            <tr>
+              <th></th>
+              <th> Windows / Linux </th>
+              <th> Mac </th>
+            </tr>
+            <tr>
+              <td> Find next </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">G</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">G</span> </td>
+            </tr>
+            <tr>
+              <td> Find previous </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">G</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">Shift</span> + <span class="kbd">G</span> </td>
+            </tr>
+            <tr>
+              <td> Open a new window in Incognito mode </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">N</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">Shift</span> + <span class="kbd">N</span> </td>
+            </tr>
+            <tr>
+              <td> Toggle Bookmarks bar on and off </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">B</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">Shift</span> + <span class="kbd">B</span> </td>
+            </tr>
+            <tr>
+              <td> View the History page </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">H</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">Y</span> </td>
+            </tr>
+            <tr>
+              <td> View the Downloads page </td>
+              <td> <span class="kbd">Ctrl</span> + <span class="kbd">J</span> </td>
+              <td> <span class="kbd">Cmd</span> + <span class="kbd">Shift</span> + <span class="kbd">J</span> </td>
+            </tr>
+            <tr>
+              <td> View the Task Manager </td>
+              <td> <span class="kbd">Shift</span> + <span class="kbd">ESC</span> </td>
+              <td> <span class="kbd">Shift</span> + <span class="kbd">ESC</span> </td>
+            </tr>
+            <tr>
+              <td> Next page in a tabs browsing history </td>
+              <td> <span class="kbd">Alt</span> + <span class="kbd">Right</span> </td>
+              <td> <span class="kbd">Alt</span> + <span class="kbd">Right</span> </td>
+            </tr>
+            <tr>
+              <td> Previous page in a tabs browsing history </td>
+              <td> <span class="kbd">Backspace</span>, <span class="kbd">Alt</span> + <span class="kbd">Left</span> </td>
+              <td> <span class="kbd">Backspace</span>, <span class="kbd">Alt</span> + <span class="kbd">Left</span> </td>
+             </tr>
+             <tr>
+               <td> Highlight content in the web address area </td>
+               <td> <span class="kbd">F6</span>, <span class="kbd">Ctrl</span> + <span class="kbd">L</span>, <span class="kbd">Alt</span> + <span class="kbd">D</span> </td>
+               <td> <span class="kbd">Cmd</span> + <span class="kbd">L</span>, <span class="kbd">Alt</span> + <span class="kbd">D</span> </td>
+             </tr>
+             <tr>
+               <td> Places a ? in the address bar for performing a keyword <br />
+                  search using your default search engine </td>
+               <td> <span class="kbd">Ctrl</span> + <span class="kbd">K</span>, <span class="kbd">Ctrl</span> + <span class="kbd">E</span> </td>
+               <td> <span class="kbd">Cmd</span> + <span class="kbd">K</span>, <span class="kbd">Cmd</span> + <span class="kbd">E</span> </td>
+             </tr>
+          </tbody>
+        </table>
+
+		<p> For a list of all Chrome shortcuts for Windows, Mac, and Linux check out <a href="http://goo.gl/PsTNm"> http://goo.gl/PsTNm </a>
+
+	</section>
+
+	<section id="pages">
+		<h2> about:pages </h2>
+
+		<table>
+			<tbody><tr><th> Page </th><th> Description </th></tr>
+			<tr><td> about:about 				</td><td> Displays all the chrome://chrome-urls </td></tr>
+			<tr><td> about:stats 				</td><td> Display page statistics. </td></tr>
+			<tr><td> about:memory 				</td><td> Display memory usage in a multi-process browser. </td></tr>
+			<tr><td> about:plugins 				</td><td> Display installed plug-ins. </td></tr>
+			<tr><td> about:histograms 			</td><td> Display connection times. </td></tr>
+			<tr><td> about:dns 					</td><td> Display DNS information. </td></tr>
+			<tr><td> about:cache 				</td><td> Display cached web pages. </td></tr>
+			<tr><td> about:network 				</td><td> Display a menu for various network monitoring and testing. </td></tr>
+			<tr><td> view-cache:stats 			</td><td> Display cached documents. </td></tr>
+			<tr><td> chrome-resource:/favicon/ 	</td><td> Display the binary data for a PNG file. </td></tr>
+			<tr><td> chrome-resource:/new-tab/ 	</td><td> A template for the empty tab page. </td></tr>
+			<tr><td> about:version 				</td><td> Display information about the browser. </td></tr>
+		</tbody></table>
+
+	</section>
+
+	<section id="chrome-urls">
+		<h2> Chrome URLs </h2>
+
+		<ul class="links">
+			<li> chrome://chrome-urls == about:about </li>
+			<li> chrome://appcache-internals </li>
+			<li> chrome://blob-internals </li>
+			<li> chrome://bookmarks </li>
+			<li> chrome://cache </li>
+			<li> chrome://crashes </li>
+			<li> chrome://credits </li>
+			<li> chrome://dns </li>
+			<li> chrome://downloads </li>
+			<li> chrome://extensions </li>
+			<li> chrome://flags </li>
+			<li> chrome://flash </li>
+			<li> chrome://gpu-internals </li>
+			<li> chrome://histograms </li>
+			<li> chrome://history </li>
+			<li> chrome://ipc </li>
+			<li> chrome://media-internals </li>
+			<li> chrome://memory </li>
+			<li> chrome://net-internals </li>
+			<li> chrome://view-http-cache </li>
+			<li> chrome://newtab </li>
+			<li> chrome://plugins </li>
+			<li> chrome://print </li>
+			<li> chrome://quota-internals </li>
+			<li> chrome://sessions </li>
+			<li> chrome://starts </li>
+			<li> chrome://sync-internals </li>
+			<li> chrome://tcmalloc </li>
+			<li> chrome://terms </li>
+			<li> chrome://tracing </li>
+			<li> chrome://version </li>
+			<li> chrome://workers </li>
+			<li> chrome://conflicts </li>
+		</ul>
+
+		<h3> For Debugging </h3>
+
+		<p> The following pages are for debugging purposes only. Because they crash or hang the renderer, they're not linked directly; you can type them into the address bar if you need them </p>
+
+		<ul class="links">
+			<li> chrome://crash </li>
+			<li> chrome://kill </li>
+			<li> chrome://hang </li>
+			<li> chrome://shorthang </li>
+			<li> chrome://gpuclean </li>
+			<li> chrome://gpucrash </li>
+			<li> chrome://gpuhang </li>
+		</ul>
+
+	</section>
+
+	<section id="links">
+		<h2> Devtools Links </h2>
+
+		<ul class="links">
+			<li><a href="http://goo.gl/D0QyI"> Getting started </a></li>
+			<li><a href="http://goo.gl/giFgt"> Inspecting Elements and Resources </a></li>
+			<li><a href="http://goo.gl/ZIruf"> Debugging JavaScript </a></li>
+			<li><a href="http://goo.gl/TlG4q"> Profiling and Optimizing </a></li>
+			<li><a href="http://goo.gl/Fwipo"> Timeline Panel </a></li>
+			<li><a href="http://goo.gl/XYgok"> Console API </a></li>
+			<li><a href="http://goo.gl/F4JPq"> Command Line API </a></li>
+			<li><a href="http://goo.gl/rdlJQ"> JavaScript Console Power User </a></li>
+			<li><a href="http://goo.gl/BVCnH"> Chrome Devtools </a></li>
+			<li><a href="http://goo.gl/gkN0K"> Chrome Shortcuts </a></li>
+			<li><a href="http://goo.gl/qtrvm"> The Breakpoint #1 </a></li>
+			<li><a href="http://goo.gl/w1WyO"> The Breakpoint #2 </a></li>
+			<li><a href="http://goo.gl/Y10Kw"> The Breakpoint #3 - The Sourcemap Spectacular </a></li>
+			<li><a href="http://goo.gl/qzSf4"> The Breakpoint #4 - The Tour De Timeline </a></li>
+			<li><a href="http://goo.gl/4kDXf"> The Breakpoint #5 - DevTools Grab bag </a></li>
+			<li><a href="http://goo.gl/q64sW"> Google IO 2010 session </a></li>
+			<li><a href="http://goo.gl/00St7"> Google IO 2011 session </a></li>
+			<li><a href="http://goo.gl/Lp4UJ"> Google IO 2012: Developer Tools Evolution </a></li>
+			<li><a href="http://goo.gl/YMnNU"> Secrets of the Chrome Developer Tools </a></li>
+			<li><a href="http://goo.gl/QfVfa"> Wait, DevTools could do THAT? </a></li>
+			<li><a href="http://goo.gl/FUzll"> Chrome Dev Tools: Networking and the Console </a></li>
+  			<li><a href="http://goo.gl/o23Cp"> Extending Chrome DevTools for fun and profit </a></li>
+  			<li><a href="http://goo.gl/PjIsn"> Better Layout for Devtools Docked Vertically </a></li>
+  			<li><a href="http://goo.gl/bZL3A"> The WebKit Inspector </a></li>
+  			<li><a href="http://goo.gl/IQEXd"> Visually Re-engineering CSS For Faster Paint Times </a></li>
+		</ul>
+
+	</section>
+</div>
+
+<footer>
+	<p>
+		<a rel="license" href="http://creativecommons.org/licenses/by/3.0/" class="cc">
+			<img alt="Creative Commons License" src="http://i.creativecommons.org/l/by/3.0/88x31.png" />
+		</a>
+		<br />
+		This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/"> Creative Commons Attribution 3.0 Unported License </a>.<br />
+
+		Cheatsheet by <a href="http://anti-code.com"> Jared Williams </a>. Notify me if you find something that is incorrect. <br />
+		<a href="https://github.com/jaredwilli/devtools-cheatsheet"> Contribute to Cheatsheet </a> |
+		<a href="https://developers.google.com/chrome-developer-tools/docs/contributing"> Contribute to Devtools </a>
+	</p>
+</footer>
+
+<div id="fb-root"></div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script defer src="js/plugins.js"></script>
+<script defer src="js/main.js"></script>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="http://connect.facebook.net/en_US/all.js#xfbml=1&appId=121556164664182";fjs.parentNode.insertBefore(js,fjs);}(document,'script','facebook-jssdk'));</script>
+
+<script type="text/javascript">(function(){var po=document.createElement('script');po.type='text/javascript';po.async=true;po.src='http://apis.google.com/js/plusone.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(po,s);})();</script>
+
+<script>
+	var _gaq=[['_setAccount','UA-22924724-1'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+		 chromium.org/developers/how-tos/chrome-frame-getting-started -->
+<!--[if lt IE 7 ]>
+	<script defer src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+	<script defer>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+<![endif]-->
+
+</body>
+</html>
